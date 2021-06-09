@@ -46,7 +46,9 @@ struct RegisterView: View {
     private func registerUser() {
         if minimumInputCount == true {
             user.name = name
+            UserDefaults.standard.setValue(user.name, forKey: "Name")
             user.isRegister.toggle()
+            UserDefaults.standard.setValue(user.isRegister, forKey: "Register")
         }
     }
 }
@@ -56,8 +58,6 @@ struct RegisterView_Previews: PreviewProvider {
         RegisterView()
     }
 }
-
-
 
 struct TextView: View {
     

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @EnvironmentObject var user: UserManager
+    
     @StateObject private var timer = TimeCounter()
     
     var body: some View {
@@ -21,28 +23,18 @@ struct ContentView: View {
                 .offset(x: 0, y: 150)
             Spacer()
             
-            ButtonView(timer: timer)
+            ButtonLaunchTimer(timer: timer)
             
             Spacer()
             
-            Button(action: {}) {
-                Text("LogOut")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-            }
-            // сама кнопка
-            .frame(width: 200, height: 60)
-            .background(Color.blue)
-            .cornerRadius(20)
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.black, lineWidth: 4)
-            )
+            ButtonLogout()
             
             Spacer()
-            }
+            
         }
+        .padding()
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -51,21 +43,19 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct ButtonView: View {
-    // создаем таймер для инициализации в родительском view и задания действий при нажатии кнопки. @ObservedOblect - ссылка на родительский экземпляр класса, то же что и @Binding, но для класса
+struct ButtonLaunchTimer: View {
+    
     @ObservedObject var timer: TimeCounter
     
     var body: some View {
-        // задаем запуск таймера при нажатии
+        
         Button(action: timer.startTimer) {
-            // текст кнопки
-            // меняем тайтл согласно состоянию таймера
+            
             Text(timer.buttonTitle)
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
         }
-        // сама кнопка
         .frame(width: 200, height: 60)
         .background(Color.red)
         .cornerRadius(20)
@@ -73,5 +63,30 @@ struct ButtonView: View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.black, lineWidth: 4)
         )
+    }
+}
+
+struct ButtonLogout: View {
+    @EnvironmentObject var user: UserManager
+    
+    var body: some View {
+        Button(action: logOut) {
+            Text("LogOut")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+        }
+        .frame(width: 200, height: 60)
+        .background(Color.blue)
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.black, lineWidth: 4)
+        )
+    }
+    private func logOut() {
+        user.isRegister.toggle()
+        UserDefaults.standard.setValue(user.isRegister, forKey: "Register")
+        UserDefaults.standard.setValue("", forKey: "Name")
     }
 }
