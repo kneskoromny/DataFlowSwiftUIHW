@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DataFlowSwiftUIHWApp: App {
+    
     @StateObject private var user = UserManager()
     
     var body: some Scene {

@@ -20,36 +20,20 @@ struct RegisterView: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("Type your name...", text: $name)
-                    .multilineTextAlignment(.center)
-                    .onChange(of: name) { name in
-                        inputCount = String(name.count)
-                        
-                        if Double(inputCount) == 3 {
-                            inputCountColor = .green
-                            minimumInputCount.toggle()
-                        }
-                    }
+                
+                InputTextField(
+                    name: $name,
+                    inputCount: $inputCount,
+                    inputCountColor: $inputCountColor,
+                    minimumInputCount: $minimumInputCount
+                )
+                
                 TextView(inputCount: inputCount, color: inputCountColor)
             }
-            Button(action: registerUser) {
-                HStack {
-                    Image(systemName: "checkmark.circle")
-                    Text("OK")
-                }
-            }
-            .disabled(!minimumInputCount)
+            
+            RegisterButton(name: name, minimumInputCount: minimumInputCount)
         }
         .padding()
-    }
-    
-    private func registerUser() {
-        if minimumInputCount == true {
-            user.name = name
-            UserDefaults.standard.setValue(user.name, forKey: "Name")
-            user.isRegister.toggle()
-            UserDefaults.standard.setValue(user.isRegister, forKey: "Register")
-        }
     }
 }
 
@@ -69,3 +53,5 @@ struct TextView: View {
             .foregroundColor(color)
     }
 }
+
+

@@ -15,6 +15,8 @@
 		F7F6DB7A2670C4A5001C7DC6 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6DB792670C4A5001C7DC6 /* RegisterView.swift */; };
 		F7F6DB7C2670C89F001C7DC6 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6DB7B2670C89F001C7DC6 /* UserManager.swift */; };
 		F7F6DB7E2670DF5F001C7DC6 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6DB7D2670DF5F001C7DC6 /* StarterView.swift */; };
+		F7F6DB802671DDEF001C7DC6 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6DB7F2671DDEF001C7DC6 /* InputTextField.swift */; };
+		F7F6DB822671E274001C7DC6 /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F6DB812671E274001C7DC6 /* RegisterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		F7F6DB792670C4A5001C7DC6 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F7F6DB7B2670C89F001C7DC6 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		F7F6DB7D2670DF5F001C7DC6 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		F7F6DB7F2671DDEF001C7DC6 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		F7F6DB812671E274001C7DC6 /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				F7F6DB682670BD74001C7DC6 /* DataFlowSwiftUIHWApp.swift */,
 				F7F6DB792670C4A5001C7DC6 /* RegisterView.swift */,
+				F7F6DB7F2671DDEF001C7DC6 /* InputTextField.swift */,
+				F7F6DB812671E274001C7DC6 /* RegisterButton.swift */,
 				F7F6DB7D2670DF5F001C7DC6 /* StarterView.swift */,
 				F7F6DB6A2670BD74001C7DC6 /* ContentView.swift */,
 				F7F6DB772670C173001C7DC6 /* TimeCounter.swift */,
@@ -150,11 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F6DB822671E274001C7DC6 /* RegisterButton.swift in Sources */,
 				F7F6DB782670C173001C7DC6 /* TimeCounter.swift in Sources */,
 				F7F6DB7A2670C4A5001C7DC6 /* RegisterView.swift in Sources */,
 				F7F6DB7E2670DF5F001C7DC6 /* StarterView.swift in Sources */,
 				F7F6DB6B2670BD74001C7DC6 /* ContentView.swift in Sources */,
 				F7F6DB7C2670C89F001C7DC6 /* UserManager.swift in Sources */,
+				F7F6DB802671DDEF001C7DC6 /* InputTextField.swift in Sources */,
 				F7F6DB692670BD74001C7DC6 /* DataFlowSwiftUIHWApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

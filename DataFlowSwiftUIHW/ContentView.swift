@@ -17,10 +17,10 @@ struct ContentView: View {
         VStack {
             Text("Hi, \(user.name)!")
                 .font(.largeTitle)
-                .offset(x: 0, y: 100)
+                .offset(x: 0, y: 50)
             Text("\(timer.counter)")
                 .font(.largeTitle)
-                .offset(x: 0, y: 150)
+                .offset(x: 0, y: 75)
             Spacer()
             
             ButtonLaunchTimer(timer: timer)
